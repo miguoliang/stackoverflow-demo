@@ -1,19 +1,38 @@
-# stackoverflow-demo
-Demo code for questions on StackOverflow
+# How to make a multiplication of 2 matrices in C++
 
-##Build
+Origin question URL is https://stackoverflow.com/questions/49654887/can-a-function-return-a-2d-array/49655176#49655176
+
+## Prerequiste
+
+You should create 3 folders mannually, those are `bin`, `debug`, `obj`, and the final structure of the project is
+
+```
++-- cpp-49654887
+  +-- bin
+  +-- debug
+  +-- obj
+  +-- res
+    +-- matrix
+  +-- src
+    +-- main.cpp
+  Makefile
+  README.md
+
+```
+
+## Build
 
 ```
     make
 ```
 
-##Usage
+## Usage
 
 ```
     bin/main <left_matrix_filename> <right_matrix_filename>
 ```
 
-##Test Data
+## Test Data
 
 You could construct your own matrix definination file in the same format with `res/matrix`
 The following conditions should be followed in the matrix definition file:
@@ -24,7 +43,7 @@ The following conditions should be followed in the matrix definition file:
 
 More about [Multiplication of two matrices](https://en.wikipedia.org/wiki/Matrix_(mathematics)#Matrix_multiplication) here!
 
-##Demo
+## Demo
 
 ```
     bin/main res/matrix res/matrix
