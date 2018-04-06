@@ -5,8 +5,18 @@
 
 using namespace std;
 
-typedef vector<double> _MatrixRow;
-typedef vector<_MatrixRow> Matrix;
+/**
+ * Reference from cppreference.com
+ * > In declarations
+ * > An identifier can be used to name objects, references, functions, enumerators, types, class members, namespaces, templates, template specializations, parameter packs, goto labels, and other entities, with the following exceptions:
+ * > the identifiers that are keywords cannot be used for other purposes;
+ * > the identifiers with a double underscore anywhere are reserved;
+ * > the identifiers that begin with an underscore followed by an uppercase letter are reserved;
+ * > the identifiers that begin with an underscore are reserved in the global namespace.
+ * visit http://en.cppreference.com/w/cpp/language/identifiers for more details
+ */
+typedef vector<double> MatrixRow;
+typedef vector<MatrixRow> Matrix;
 
 // read a matrix from a given file
 Matrix get_matrix(string filename);
@@ -68,7 +78,7 @@ Matrix get_matrix(string filename)
         string token;
         size_t pos = 0;
         string delimiter = ",";
-        _MatrixRow cells;
+        MatrixRow cells;
         while ((pos = line.find(delimiter, pos) != string::npos))
         {
             token = line.substr(0, pos);
@@ -89,8 +99,8 @@ void print_matrix(const Matrix &matrix)
     Matrix::const_iterator iter;
     for (iter = matrix.begin(); iter != matrix.end(); iter++)
     {
-        _MatrixRow cells = *iter;
-        _MatrixRow::const_iterator cellIter;
+        MatrixRow cells = *iter;
+        MatrixRow::const_iterator cellIter;
         cellIter = (*iter).begin();
         while (cellIter != (*iter).end())
         {
